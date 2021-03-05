@@ -4,12 +4,12 @@ function renderManager(data) {
     <div class="col mb-4">
         <div class="card">
             <div class="card-body">
-                <h3 class="card-title">Name</h3>
+                <h3 class="card-title">${managerName}</h3>
                 <h5 class="card-title"><i class="fas fa-mug-hot"></i> Manager</h5>
                 <ul class="list-group">
-                    <li class="list-group-item">ID:</li>
-                    <li class="list-group-item">Email:</li>
-                    <li class="list-group-item">Office #:</li>
+                    <li class="list-group-item">ID: ${managerId}</li>
+                    <li class="list-group-item">Email: ${managerEmail}</li>
+                    <li class="list-group-item">Office #: ${managerOfficeNumber}</li>
                 </ul>
             </div>
         </div>
@@ -22,12 +22,12 @@ function renderEngineer(data) {
     <div class="col mb-4">
         <div class="card">
             <div class="card-body">
-                <h3 class="card-title">Name</h3>
+                <h3 class="card-title">${engineerName}</h3>
                 <h5 class="card-title"><i class="fas fa-glasses"></i> Engineer</h5>
                 <ul class="list-group">
-                    <li class="list-group-item">ID:</li>
-                    <li class="list-group-item">Email:</li>
-                    <li class="list-group-item">GitHub:</li>
+                    <li class="list-group-item">ID: ${engineerId}</li>
+                    <li class="list-group-item">Email: ${engineerEmail}</li>
+                    <li class="list-group-item">GitHub: ${engineerGithub}</li>
                 </ul>
             </div>
         </div>
@@ -40,12 +40,12 @@ function renderIntern(data) {
     <div class="col mb-4">
         <div class="card">
             <div class="card-body">
-                <h3 class="card-title">Name</h3>
+                <h3 class="card-title">${internName}</h3>
                 <h5 class="card-title"><i class="fas fa-graduation-cap"></i> Intern</h5>
                 <ul class="list-group">
-                    <li class="list-group-item">ID:</li>
-                    <li class="list-group-item">Email:</li>
-                    <li class="list-group-item">School:</li>
+                    <li class="list-group-item">ID: ${internId}</li>
+                    <li class="list-group-item">Email: ${internEmail}</li>
+                    <li class="list-group-item">School: ${internSchool}</li>
                 </ul>
             </div>
         </div>
@@ -62,8 +62,7 @@ function generateHTML (data) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">  
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-        <!-- change css link later -->
-        <link rel="stylesheet" href="./dist/stylesheet.css">
+        <link rel="stylesheet" href="./stylesheet.css">
         <title>Team-Profile-Page</title>
     </head>
     

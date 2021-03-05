@@ -1,9 +1,15 @@
+// dependencies
 const fs = require("fs");
 const inquirer = require("inquirer");
+
+// parent/child classes
 const Employee = require("./lib/Employee")
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
+
+//
+const generateHTML = require("./src/generateHTML.js");
 
 const teamProfiles = [];
 
@@ -31,7 +37,7 @@ const ManagerInfo = () => {
             message: "What is their office number?",
         },
     ]).then(data => {
-        const manager = new Manager(data.name, data.id, data.email, data.officeNumber);
+        const manager = new Manager (data.name, data.id, data.email, data.officeNumber);
         teamProfiles.push(manager);
 
         // menuOptions();
@@ -113,9 +119,9 @@ const ManagerInfo = () => {
 // });
 
 // // finish building team, exits application, HTML is generated
-// const generateTeam = () => {
+const generateTeam = () => {
 
-// }
+}
 
 
 

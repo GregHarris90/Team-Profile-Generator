@@ -1,0 +1,14 @@
+.jumbotron {
+    background-color: rgb(0, 126, 175);
+    border: black;
+    border-radius: 15px;
+    border-width: 25px;
+}
+
+.text-center {
+    color: white;
+}
+
+/* .card{
+    width: 100%;
+} */

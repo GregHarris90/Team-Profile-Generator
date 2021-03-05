@@ -54,7 +54,8 @@ function renderIntern(data) {
 
 // creates HTML file for Team Profiles
 function generateHTML (data) {
-    return`<!DOCTYPE html>
+    return`
+    <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">

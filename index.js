@@ -8,7 +8,7 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
 
-//
+// generate HTML function
 const generateHTML = require("./src/generateHTML.js");
 
 const teamProfiles = [];
@@ -18,26 +18,26 @@ const ManagerInfo = () => {
     inquirer.prompt([
         {
             type: "input",
-            name: "name",
+            name: "managerName",
             message: "What is the team Manager's name?",
         },
         {
             type: "number",
-            name: "id",
+            name: "managerId",
             message: "What is their employee ID number?",
         },
         {
             type: "input",
-            name: "email",
+            name: "managerEmail",
             message: "What is their email address?",
         },
         {
             type: "number",
-            name: "officeNumber",
+            name: "managerOfficeNumber",
             message: "What is their office number?",
         },
     ]).then(data => {
-        const manager = new Manager (data.name, data.id, data.email, data.officeNumber);
+        const manager = new Manager (data.managerName, data.managerId, data.managerEmail, data.managerOfficeNumber);
         teamProfiles.push(manager);
 
         // menuOptions();
@@ -50,22 +50,22 @@ const ManagerInfo = () => {
 //     inquirer.prompt([
 //         {
 //             type: "input",
-//             name: "name",
+//             name: "engineerName",
 //             message: "What is the name of this Engineer?",
 //         },
 //         {
 //             type: "number",
-//             name: "id",
+//             name: "engineerId",
 //             message: "What is their employee ID number?",
 //         },
 //         {
 //             type: "input",
-//             name: "email",
+//             name: "engineerEmail",
 //             message: "What is their email address?",
 //         },
 //         {
 //             type: "input",
-//             name: "github",
+//             name: "engineerGithub",
 //             message: "What is their GitHub username?",
 //         },
 //     ]).then(data)
@@ -79,17 +79,22 @@ const ManagerInfo = () => {
 //     inquirer.prompt([
 //         {
 //             type: "input",
-//             name: "name",
+//             name: "internName",
 //             message: "What is the name of this Engineer?",
 //         },
 //         {
 //             type: "number",
-//             name: "id",
+//             name: "internId",
 //             message: "What is their employee ID number?",
 //         },
 //         {
 //             type: "input",
-//             name: "school",
+//             name: "internEmail",
+//             message: "What is their email address?",
+//         },
+//         {
+//             type: "input",
+//             name: "internSchool",
 //             message: "What school have they attended?",
 //         },
 //     ]).then(data)
@@ -122,9 +127,6 @@ const ManagerInfo = () => {
 const generateTeam = () => {
 
 }
-
-
-
 
 // starts application by asking for Manager information
 ManagerInfo();

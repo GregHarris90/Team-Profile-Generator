@@ -18,7 +18,7 @@ This is for an application used to build a team of employees, log their informat
 
 *LINK TO DEMO VIDEO*
 
-*NEED LINK*
+*NEED LINK!*
 
 # Technology-Used
 

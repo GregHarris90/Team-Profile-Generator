@@ -44,7 +44,7 @@ This is for an application used to build a team of employees, log their informat
 
 *Main-Page*
 
-*EXAMPLE*
+*INCOMPLETE EXAMPLE!*
 ![Team-Profile-Main](https://user-images.githubusercontent.com/73864182/110106386-7a77c700-7d5e-11eb-9c9d-cc45d6f8e5cb.png)
 
 # Contact-Info:

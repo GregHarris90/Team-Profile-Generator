@@ -56,3 +56,6 @@ This is for an application used to build a team of employees, log their informat
 
 03/05/21
 - Overall this homework assignment has been extremely difficult to get completed on time. So far I still can't get my objects with the relevant information to properly work. I'm going to continue working on this project tomorrow in hopes to get my HTML page to generate and then write my tests for each of the classes.
+
+UPDATE: 03/05/21
+- I continued working on this assignment last night & today. I was able to get more parts of my code built (generateHTML.js & bringing my object classes into index.js). But my application isn't running and returning a reference error that I can't figure out. I'm going to attend office hours for help on fixing this in hopes of having it working by tomorrow. I might need to request a regrade on this project. 

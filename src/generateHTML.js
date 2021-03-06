@@ -1,6 +1,9 @@
 // creates Manager Card
-function renderManager(data) {
-    return`
+function renderManager(manager) {
+    if (manager === "") {
+        return ("");
+    } else {
+        return (`
     <div class="col mb-4">
         <div class="card">
             <div class="card-body">
@@ -13,12 +16,16 @@ function renderManager(data) {
                 </ul>
             </div>
         </div>
-    </div>`
+    </div>`);
+    }   
 };
 
 // creates Engineer Card
-function renderEngineer(data) {
-    return`
+function renderEngineer(engineer) {
+    if (engineer === "") {
+        return ("");
+    } else {
+        return (`
     <div class="col mb-4">
         <div class="card">
             <div class="card-body">
@@ -31,12 +38,16 @@ function renderEngineer(data) {
                 </ul>
             </div>
         </div>
-    </div>`
+    </div>`);
+    }
 };
 
 // creates Intern Card
-function renderIntern(data) {
-    return`
+function renderIntern(intern) {
+    if (intern === "") {
+        return ("");
+    } else {
+        return (`
     <div class="col mb-4">
         <div class="card">
             <div class="card-body">
@@ -49,11 +60,12 @@ function renderIntern(data) {
                 </ul>
             </div>
         </div>
-    </div>`
+    </div>`);
+    }
 };
 
 // creates HTML file for Team Profiles
-function generateHTML (data) {
+function generateHTML(data) {
     return`
     <!DOCTYPE html>
     <html lang="en">

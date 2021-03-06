@@ -3,7 +3,7 @@ const fs = require("fs");
 const inquirer = require("inquirer");
 
 // parent/child classes
-const Employee = require("./lib/Employee")
+const Employee = require("./lib/Employee");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
@@ -34,18 +34,18 @@ const ManagerInfo = () => {
         },
         {
             type: "number",
-            name: "managerOfficeNumber",
+            name: "officeNumber",
             message: "What is their office number?",
         },
     ]).then(data => {
-        const manager = new Manager(data.managerName, data.managerId, data.managerEmail, data.managerOfficeNumber);
+        const manager = new Manager(data.managerName, data.managerId, data.managerEmail, data.officeNumber);
         teamProfiles.push(manager);
 
         menuOptions();
     })
 }
 
-// // select engineer option, ask for name, ID (#), email, github username, then run menuOptions
+// select engineer option, ask for name, ID (#), email, github username, then run menuOptions
 const EngineerInfo = () => {
     inquirer.prompt([
         {
@@ -76,7 +76,7 @@ const EngineerInfo = () => {
     })
 }
 
-// // select intern option, ask for name, ID (#), email, school, then run menuOptions
+// select intern option, ask for name, ID (#), email, school, then run menuOptions
 const InternInfo = () => {
     inquirer.prompt([
         {
@@ -118,7 +118,7 @@ const menuOptions = () =>
         },
     ]).then(data => {
         const role = data.menu;
-        if(role === "Engineer") {
+        if (role === "Engineer") {
             EngineerInfo();
         }else if (role === "Intern") {
             InternInfo();

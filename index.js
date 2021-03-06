@@ -37,10 +37,10 @@ const ManagerInfo = () => {
             message: "What is their office number?",
         },
     ]).then(data => {
-        const manager = new Manager (data.managerName, data.managerId, data.managerEmail, data.managerOfficeNumber);
+        const manager = new Manager(data.managerName, data.managerId, data.managerEmail, data.managerOfficeNumber);
         teamProfiles.push(manager);
 
-        // menuOptions();
+        menuOptions();
     })
 
 }
@@ -104,28 +104,30 @@ const ManagerInfo = () => {
 // }
 
 // // presented with menu to add another team member (engineer or intern) or finish building team
-// const menuOptions = () =>
-//     inquirer.prompt([
-//         {
-//             type: "list",
-//             name: "menu",
-//             message: "Please select your next employee or select 'Finished' to complete building team:",
-//             choices: ["Engineer", "Intern", "Finished"],
-//         },
-//     ]).then(data => {
-//         const role = data.menu;
-//         if(role === "Engineer") {
-//             EngineerInfo();
-//         }else if (role === "Intern") {
-//             InternInfo();
-//         }else if (role === "Finished") {
-//             generateTeam();
-//         }
-// });
+const menuOptions = () =>
+    inquirer.prompt([
+        {
+            type: "list",
+            name: "menu",
+            message: "Please select your next employee or select 'Finished' to complete building team:",
+            choices: ["Engineer", "Intern", "Finished"],
+        },
+    ]).then(data => {
+        const role = data.menu;
+        if(role === "Engineer") {
+            EngineerInfo();
+        }else if (role === "Intern") {
+            InternInfo();
+        }else if (role === "Finished") {
+            generateTeam();
+        }
+});
 
-// // finish building team, exits application, HTML is generated
+// // exits application, runs generate HTML with teamProfile array, finishing building team,  HTML is generated
 const generateTeam = () => {
-
+    const distHTML = generateHTML(teamProfiles);
+    fs.writeFileSync("./dist/index.html", distHTML);
+    console.log("Successfully wrote your index.HTML file to dist folder.")
 }
 
 // starts application by asking for Manager information

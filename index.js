@@ -129,6 +129,7 @@ const menuOptions = () =>
 
 // exits application, runs generateHTML with teamProfiles array, finish building team, then HTML is generated
 const generateTeam = () => {
+    console.log(teamProfiles);
     const distHTML = generateHTML(teamProfiles);
     fs.writeFileSync("./dist/index.html", distHTML);
     console.log("Successfully wrote your index.HTML file to dist folder.")

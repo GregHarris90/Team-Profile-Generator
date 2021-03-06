@@ -7,12 +7,12 @@ function renderManager(manager) {
     <div class="col mb-4">
         <div class="card">
             <div class="card-body">
-                <h3 class="card-title">${managerName}</h3>
+                <h3 class="card-title">${manager.name}</h3>
                 <h5 class="card-title"><i class="fas fa-mug-hot"></i> Manager</h5>
                 <ul class="list-group">
-                    <li class="list-group-item">ID: ${managerId}</li>
-                    <li class="list-group-item">Email: <a href="mailto:${managerEmail}">${managerEmail}</a></li>
-                    <li class="list-group-item">Office #: ${managerOfficeNumber}</li>
+                    <li class="list-group-item">ID: ${manager.id}</li>
+                    <li class="list-group-item">Email: <a href="mailto:${manager.email}">${manager.email}</a></li>
+                    <li class="list-group-item">Office #: ${manager.officeNumber}</li>
                 </ul>
             </div>
         </div>
@@ -29,12 +29,12 @@ function renderEngineer(engineer) {
     <div class="col mb-4">
         <div class="card">
             <div class="card-body">
-                <h3 class="card-title">${engineerName}</h3>
+                <h3 class="card-title">${engineer.name}</h3>
                 <h5 class="card-title"><i class="fas fa-glasses"></i> Engineer</h5>
                 <ul class="list-group">
-                    <li class="list-group-item">ID: ${engineerId}</li>
-                    <li class="list-group-item">Email: <a href="mailto:${engineerEmail}">${engineerEmail}</a></li>
-                    <li class="list-group-item">GitHub: <a href="https://github.com/${engineerGithub}">${engineerGithub}</a></li>
+                    <li class="list-group-item">ID: ${engineer.id}</li>
+                    <li class="list-group-item">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></li>
+                    <li class="list-group-item">GitHub: <a href="https://github.com/${engineer.github}">${engineer.github}</a></li>
                 </ul>
             </div>
         </div>
@@ -51,12 +51,12 @@ function renderIntern(intern) {
     <div class="col mb-4">
         <div class="card">
             <div class="card-body">
-                <h3 class="card-title">${internName}</h3>
+                <h3 class="card-title">${intern.name}</h3>
                 <h5 class="card-title"><i class="fas fa-graduation-cap"></i> Intern</h5>
                 <ul class="list-group">
-                    <li class="list-group-item">ID: ${internId}</li>
-                    <li class="list-group-item">Email: <a href="mailto:${internEmail}">${internEmail}</a></li>
-                    <li class="list-group-item">School: ${internSchool}</li>
+                    <li class="list-group-item">ID: ${intern.id}</li>
+                    <li class="list-group-item">Email: <a href="mailto:${intern.email}">${intern.email}</a></li>
+                    <li class="list-group-item">School: ${intern.school}</li>
                 </ul>
             </div>
         </div>
@@ -65,7 +65,19 @@ function renderIntern(intern) {
 };
 
 // creates HTML file for Team Profiles
-function generateHTML(data) {
+function generateHTML(teamMembers) {
+    const memberHTML = []
+    teamMembers.forEach(teamMember => {
+        const memberRole = teamMember.getRole()
+        if ( memberRole === "Manager") {
+            memberHTML.push(renderManager(teamMember)) 
+        } else if ( memberRole === "Engineer") {
+            memberHTML.push(renderEngineer(teamMember))
+        } else {
+            memberHTML.push(renderIntern(teamMember))
+        }
+        console.log(memberHTML);
+    })
     return`
     <!DOCTYPE html>
     <html lang="en">
@@ -89,14 +101,14 @@ function generateHTML(data) {
             </div>
     
             <div class="row row-cols-3 team-profiles">
-                ${renderManager(data)}
-                ${renderEngineer(data)}
-                ${renderIntern(data)}
+                ${memberHTML.join("")}
             </div>
             
     </body>
     </html>`
 }
+
+
 
 // exports HTML file
 module.exports = generateHTML;

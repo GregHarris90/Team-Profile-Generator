@@ -14,7 +14,7 @@ const generateHTML = require("./src/generateHTML.js");
 // empty array for team objects
 const teamProfiles = [];
 
-// manager name, employee ID (number), email address, office number (number)
+// ask for manager name, employee ID (number), email address, office number (number), then run menuOptions
 const ManagerInfo = () => {
     inquirer.prompt([
         {
@@ -43,68 +43,71 @@ const ManagerInfo = () => {
 
         menuOptions();
     })
-
 }
 
-// // select engineer option, asked for name, ID (#), email, github username, menu
-// const EngineerInfo = () => {
-//     inquirer.prompt([
-//         {
-//             type: "input",
-//             name: "engineerName",
-//             message: "What is the name of this Engineer?",
-//         },
-//         {
-//             type: "number",
-//             name: "engineerId",
-//             message: "What is their employee ID number?",
-//         },
-//         {
-//             type: "input",
-//             name: "engineerEmail",
-//             message: "What is their email address?",
-//         },
-//         {
-//             type: "input",
-//             name: "engineerGithub",
-//             message: "What is their GitHub username?",
-//         },
-//     ]).then(data)
-    
-//     menuOptions();
+// // select engineer option, ask for name, ID (#), email, github username, then run menuOptions
+const EngineerInfo = () => {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "engineerName",
+            message: "What is the name of this Engineer?",
+        },
+        {
+            type: "number",
+            name: "engineerId",
+            message: "What is their employee ID number?",
+        },
+        {
+            type: "input",
+            name: "engineerEmail",
+            message: "What is their email address?",
+        },
+        {
+            type: "input",
+            name: "engineerGithub",
+            message: "What is their GitHub username?",
+        },
+    ]).then(data => {
+        const engineer = new Engineer(data.engineerName, data.engineerId, data.engineerEmail, data.engineerGithub);
+        teamProfiles.push(engineer);
 
-// }
+        menuOptions();
+    })
+}
 
-// // select intern option, asked for name, ID (#), email, school, menu
-// const InternInfo = () => {
-//     inquirer.prompt([
-//         {
-//             type: "input",
-//             name: "internName",
-//             message: "What is the name of this Engineer?",
-//         },
-//         {
-//             type: "number",
-//             name: "internId",
-//             message: "What is their employee ID number?",
-//         },
-//         {
-//             type: "input",
-//             name: "internEmail",
-//             message: "What is their email address?",
-//         },
-//         {
-//             type: "input",
-//             name: "internSchool",
-//             message: "What school have they attended?",
-//         },
-//     ]).then(data)
+// // select intern option, ask for name, ID (#), email, school, then run menuOptions
+const InternInfo = () => {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "internName",
+            message: "What is the name of this Engineer?",
+        },
+        {
+            type: "number",
+            name: "internId",
+            message: "What is their employee ID number?",
+        },
+        {
+            type: "input",
+            name: "internEmail",
+            message: "What is their email address?",
+        },
+        {
+            type: "input",
+            name: "internSchool",
+            message: "What school have they attended?",
+        },
+    ]).then(data => {
+        const intern = new Intern(data.internName, data.internId, data.internEmail, data.internSchool);
+        teamProfiles.push(intern);
 
-//     menuOptions();
+        menuOptions();
+    })
+}
 
-// }
-
-// // presented with menu to add another team member (engineer or intern) or finish building team
+// run menuOptions and ask to add another team member (engineer/intern) or finish building team
 const menuOptions = () =>
     inquirer.prompt([
         {
@@ -124,12 +127,12 @@ const menuOptions = () =>
         }
 });
 
-// exits application, runs generate HTML with teamProfile array, finishing building team,  HTML is generated
+// exits application, runs generateHTML with teamProfiles array, finish building team, then HTML is generated
 const generateTeam = () => {
     const distHTML = generateHTML(teamProfiles);
     fs.writeFileSync("./dist/index.html", distHTML);
     console.log("Successfully wrote your index.HTML file to dist folder.")
 }
 
-// starts application by asking for Manager information
+// starts application by asking for manager information
 ManagerInfo();

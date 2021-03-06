@@ -11,6 +11,7 @@ const Manager = require("./lib/Manager");
 // generate HTML function
 const generateHTML = require("./src/generateHTML.js");
 
+// empty array for team objects
 const teamProfiles = [];
 
 // manager name, employee ID (number), email address, office number (number)
@@ -123,7 +124,7 @@ const menuOptions = () =>
         }
 });
 
-// // exits application, runs generate HTML with teamProfile array, finishing building team,  HTML is generated
+// exits application, runs generate HTML with teamProfile array, finishing building team,  HTML is generated
 const generateTeam = () => {
     const distHTML = generateHTML(teamProfiles);
     fs.writeFileSync("./dist/index.html", distHTML);

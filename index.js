@@ -82,7 +82,7 @@ const InternInfo = () => {
         {
             type: "input",
             name: "internName",
-            message: "What is the name of this Engineer?",
+            message: "What is the name of this Intern?",
         },
         {
             type: "number",

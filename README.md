@@ -18,7 +18,7 @@ This is for an application used to build a team of employees, log their informat
 
 *LINK TO DEMO VIDEO*
 
-*NEED LINK!*
+https://drive.google.com/file/d/1xHbbmAqI1Y5ddAIX4i0EIhDjxnzzZMVM/view?usp=sharing
 
 # Technology-Used
 

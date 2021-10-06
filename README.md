@@ -1,8 +1,6 @@
 # Team-Profile-Generator
 This is for an application used to build a team of employees, log their information through the terminal, and generate a basic webpage to display it.
 
-*Homework assignment for Week 10 of Coding Bootcamp!*
-
 ### Table of Contents 
 
 * [Repository](#Repository) 
